@@ -2,6 +2,8 @@
 
 using TechTalk.SpecFlow;
 
+using Xunit;
+
 namespace OfficeMate.E2E.StepDefinition.Domains
 {
     [Binding]
