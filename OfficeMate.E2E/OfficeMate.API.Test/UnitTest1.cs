@@ -1,4 +1,4 @@
-namespace OfficeMate.E2E
+namespace OfficeMate.API.Test
 {
     public class UnitTest1
     {

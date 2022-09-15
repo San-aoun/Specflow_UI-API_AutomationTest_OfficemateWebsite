@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 using TechTalk.SpecFlow;
 
@@ -32,8 +26,17 @@ namespace OfficeMate.E2E.StepDefinition.Domains
                 .ElementIsVisible(By.XPath(searchBar)));
 
             ChromeDriver.FindElement(By.XPath(searchBar)).SendKeys(item);
+            ChromeDriver.FindElement(By.Id("btn-searchResultPage")).Click();
 
         }
+
+        [Then(@"Display should show subject with ""([^""]*)""")]
+        public void ThenDisplayShouldShowSubjectWith(string item)
+        {
+            var results = ChromeDriver.FindElement(By.XPath("//a[('data-product-section=\"" + item + "\"')]")).Displayed;
+            Assert.True(results);
+        }
+
 
     }
 }

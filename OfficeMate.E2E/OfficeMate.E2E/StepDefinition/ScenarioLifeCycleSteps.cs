@@ -1,5 +1,10 @@
-﻿using OfficeMate.E2E.Common;
+﻿using System;
+
+using OfficeMate.E2E.Common;
 using OfficeMate.E2E.Configuration;
+
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 using TechTalk.SpecFlow;
 
@@ -15,15 +20,29 @@ namespace OfficeMate.E2E.StepDefinition
         [BeforeTestRun(Order = 0)]
         public static void BeforeTestRun()
         {
-            var uri = new Uri($"{Settings.WebUrl}");
-
             _webDriverSessionMenager = new WebDriverSessionManager();
             var driver = _webDriverSessionMenager.GetChrome();
+
+            GotoURL(driver);
+            ClearAbsScreen(driver);
+        
+            Console.WriteLine("BeforeTestRun");
+        }
+
+        private static void GotoURL(ChromeDriver driver)
+        {
+            var uri = new Uri($"{Settings.WebUrl}");
+
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(uri);
 
             Console.WriteLine("Goto uri" + uri);
-            Console.WriteLine("BeforeTestRun");
+        }
+
+        private static void ClearAbsScreen(ChromeDriver driver)
+        {
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//div[5]/iframe")));
+            driver.ExecuteScript("$('.fa.fa-times.element-close-button').click()");
         }
 
         [AfterTestRun]
