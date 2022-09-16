@@ -1,10 +1,11 @@
-﻿using System;
-
-using OfficeMate.E2E.Common;
+﻿using OfficeMate.E2E.Common;
 using OfficeMate.E2E.Configuration;
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+
+using SeleniumExtras.WaitHelpers;
 
 using TechTalk.SpecFlow;
 
@@ -32,7 +33,6 @@ namespace OfficeMate.E2E.StepDefinition
         private static void GotoURL(ChromeDriver driver)
         {
             var uri = new Uri($"{Settings.WebUrl}");
-
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(uri);
 
@@ -41,15 +41,19 @@ namespace OfficeMate.E2E.StepDefinition
 
         private static void ClearAbsScreen(ChromeDriver driver)
         {
-            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//div[5]/iframe")));
-            driver.ExecuteScript("$('.fa.fa-times.element-close-button').click()");
+            var wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(10000));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.sp-fancybox-wrap > iframe")));
+
+            driver.SwitchTo().Frame(driver.FindElement(By.CssSelector("div.sp-fancybox-wrap > iframe")));
+            driver.FindElement(By.CssSelector(".fa.fa-times.element-close-button")).Click();
         }
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
             var driver = _webDriverSessionMenager.GetChrome();
-            driver.Close();
+
+            //driver.Close();
             driver.Quit();
         }
 
@@ -61,24 +65,24 @@ namespace OfficeMate.E2E.StepDefinition
             Console.WriteLine("BeforeFeature");
         }
 
-        [AfterScenario]
-        public void ScreenshotTestError()
-        {
-            if (ScenarioContext.Current.TestError != null)
-            {
-                OpenQA.Selenium.ITakesScreenshot screenshotDriver = ChromeDriver;
-                OpenQA.Selenium.Screenshot screenshot = screenshotDriver.GetScreenshot();
-                string title = ScenarioContext.Current.ScenarioInfo.Title;
-                string Runname = title + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
+        //[AfterScenario]
+        //public void ScreenshotTestError()
+        //{
+        //    if (ScenarioContext.Current.TestError != null)
+        //    {
+        //        ITakesScreenshot screenshotDriver = ChromeDriver;
+        //        Screenshot screenshot = screenshotDriver.GetScreenshot();
+        //        string title = ScenarioContext.Current.ScenarioInfo.Title;
+        //        string Runname = title + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
 
-                string folder = Directory.CreateDirectory(Environment.CurrentDirectory + @"\ScreenShot_TestError").ToString();
-                string path = Path.Combine(Environment.CurrentDirectory, folder, Runname + ".png");
+        //        string folder = Directory.CreateDirectory(Environment.CurrentDirectory + @"\ScreenShot_TestError").ToString();
+        //        string path = Path.Combine(Environment.CurrentDirectory, folder, Runname + ".png");
 
 
-                screenshot.SaveAsFile(path, OpenQA.Selenium.ScreenshotImageFormat.Png);
+        //        screenshot.SaveAsFile(path, OpenQA.Selenium.ScreenshotImageFormat.Png);
 
-            }
+        //    }
 
-        }
+        //}
     }
 }

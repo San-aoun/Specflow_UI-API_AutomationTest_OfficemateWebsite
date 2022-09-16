@@ -122,3 +122,4 @@ C:\Users\piyathida.s\source\repos\Specflow_UI-API_AutomationTest_OfficemateWebsi
 C:\Users\piyathida.s\source\repos\Specflow_UI-API_AutomationTest_OfficemateWebsite\OfficeMate.E2E\OfficeMate.E2E\bin\Debug\net6.0\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
 C:\Users\piyathida.s\source\repos\Specflow_UI-API_AutomationTest_OfficemateWebsite\OfficeMate.E2E\OfficeMate.E2E\bin\Debug\net6.0\Microsoft.Data.Tools.Utilities.dll
 C:\Users\piyathida.s\source\repos\Specflow_UI-API_AutomationTest_OfficemateWebsite\OfficeMate.E2E\OfficeMate.E2E\bin\Debug\net6.0\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\Users\piyathida.s\source\repos\Specflow_UI-API_AutomationTest_OfficemateWebsite\OfficeMate.E2E\OfficeMate.E2E\bin\Debug\net6.0\WebDriver.Support.dll

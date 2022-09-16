@@ -99,55 +99,48 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
- testRunner.When("the user add the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 5
- testRunner.And("the user go to cart for view cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user add the item \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 6
+ testRunner.And("the user go to cart for view cart with the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 7
  testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Data",
-                            "Value"});
-                table2.AddRow(new string[] {
                             "First Name",
-                            "Jane"});
-                table2.AddRow(new string[] {
                             "Last Name",
-                            "Doe"});
-                table2.AddRow(new string[] {
                             "Phone",
-                            "09-999-9999"});
-                table2.AddRow(new string[] {
                             "Email",
-                            "Automation_test01@gmail.com"});
-                table2.AddRow(new string[] {
                             "Address",
-                            "2/3 Bangkok"});
-                table2.AddRow(new string[] {
                             "Zip Code",
-                            "10520"});
-                table2.AddRow(new string[] {
                             "Region",
-                            "Bangkok"});
-                table2.AddRow(new string[] {
                             "District",
-                            "Lat Krabang"});
+                            "Sub District"});
                 table2.AddRow(new string[] {
-                            "Sub District",
+                            "Jane",
+                            "Doe",
+                            "09-999-9999",
+                            "Automation_test01@gmail.com",
+                            "2/3 Bangkok",
+                            "10520",
+                            "Bangkok",
+                            "Lat Krabang",
                             "Lam Pla Thio"});
-#line 7
+#line 8
  testRunner.And("the user Specify Delivery Information with data", ((string)(null)), table2, "And ");
 #line hidden
-#line 18
- testRunner.And("Click Taz invoice same address as the delivery", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("Click Tax invoice same address as the delivery", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 12
  testRunner.And("the user proceed to payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Data",
+                            "Key",
                             "Value"});
                 table3.AddRow(new string[] {
                             "Card Number",
@@ -161,10 +154,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table3.AddRow(new string[] {
                             "CVV/CVC",
                             "225"});
-#line 20
+#line 13
  testRunner.And("Select you payment option \"Credit Card/Debit Card\" and updated infomation", ((string)(null)), table3, "And ");
 #line hidden
-#line 26
+#line 19
  testRunner.And("Click \"Pay Now\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

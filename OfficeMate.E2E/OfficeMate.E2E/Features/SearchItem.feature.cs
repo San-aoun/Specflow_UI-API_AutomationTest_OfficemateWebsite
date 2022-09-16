@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 5
- testRunner.Then("Display should show subject with \"Green PencilsPlus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Display should show subject with \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
