@@ -75,6 +75,21 @@ namespace OfficeMate.E2E.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line hidden
+#line 4
+ testRunner.Given("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+ testRunner.And("the user add the item \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 6
+ testRunner.And("the user go to cart for view cart with the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+        }
+        
         void System.IDisposable.Dispose()
         {
             this.TestTearDown();
@@ -88,7 +103,7 @@ namespace OfficeMate.E2E.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user delete Item on the cart should create", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 3
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -98,28 +113,15 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "item Name",
-                            "number of item",
-                            "Price"});
-                table1.AddRow(new string[] {
-                            "Plus Pen-3000 Green (04) A",
-                            "1",
-                            "10"});
-#line 4
- testRunner.Given("the user add the item with the details", ((string)(null)), table1, "Given ");
+#line 3
+this.FeatureBackground();
 #line hidden
-#line 7
- testRunner.And("the user go to cart for view cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 8
+#line 12
  testRunner.When("the user click remove the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
- testRunner.And("click confirm Delete this item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.Then("the screen show the the message \"Your shopping cart is currently empty\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.Then("the screen show the the message \"Your shopping cart is currently empty\\r\\nGO SHOP" +
+                        "PING\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

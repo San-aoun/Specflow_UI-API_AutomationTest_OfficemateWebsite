@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OfficeMate.E2E.StepDefinition.Domains
+namespace OfficeMate.E2E
 {
-    internal class UpdateItemStep
+    class README
     {
     }
 }

@@ -1,10 +1,13 @@
 ﻿Feature: DeleteItem
 
+Background: 
+	Given the user seraches "Plus Pen-3000 Green (04) A"
+	And the user add the item "Search Results/Plus Pen-3000 Green (04) A"
+	And the user go to cart for view cart with the item "Plus Pen-3000 Green (04) A"
+
+########################################################
+# Functional API Invalidation
+########################################################
 Scenario: The user delete Item on the cart should create 
-	Given the user add the item with the details
-		| item Name                  | number of item | Price |
-		| Plus Pen-3000 Green (04) A | 1              | 10    |  
-	And the user go to cart for view cart
 	When the user click remove the item
-	And click confirm Delete this item
-	Then the screen show the the message "Your shopping cart is currently empty"
+	Then the screen show the the message "Your shopping cart is currently empty\r\nGO SHOPPING"

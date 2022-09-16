@@ -40,7 +40,7 @@ namespace OfficeMate.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SearchItem", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search Item", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,14 +81,14 @@ namespace OfficeMate.E2E.Features
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="The user seraches item should get data correctly")]
-        [Xunit.TraitAttribute("FeatureTitle", "SearchItem")]
+        [Xunit.TraitAttribute("FeatureTitle", "Search Item")]
         [Xunit.TraitAttribute("Description", "The user seraches item should get data correctly")]
         public void TheUserSerachesItemShouldGetDataCorrectly()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user seraches item should get data correctly", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 3
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -98,10 +98,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 7
  testRunner.When("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 5
+#line 8
  testRunner.Then("Display should show subject with \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

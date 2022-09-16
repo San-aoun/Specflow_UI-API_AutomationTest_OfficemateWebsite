@@ -19,7 +19,7 @@ namespace OfficeMate.E2E.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PerchasingFeature : object, Xunit.IClassFixture<PerchasingFeature.FixtureData>, System.IDisposable
+    public partial class PerchasingProductFeature : object, Xunit.IClassFixture<PerchasingProductFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace OfficeMate.E2E.Features
 #line 1 "Perchasing-Flow.feature"
 #line hidden
         
-        public PerchasingFeature(PerchasingFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PerchasingProductFeature(PerchasingProductFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace OfficeMate.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Perchasing", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Perchasing product", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,15 +80,15 @@ namespace OfficeMate.E2E.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The user adds perchase the pencil item should update success")]
-        [Xunit.TraitAttribute("FeatureTitle", "Perchasing")]
-        [Xunit.TraitAttribute("Description", "The user adds perchase the pencil item should update success")]
-        public void TheUserAddsPerchaseThePencilItemShouldUpdateSuccess()
+        [Xunit.SkippableFactAttribute(DisplayName="The user order item with create incorrect payment detail should not submit order")]
+        [Xunit.TraitAttribute("FeatureTitle", "Perchasing product")]
+        [Xunit.TraitAttribute("Description", "The user order item with create incorrect payment detail should not submit order")]
+        public void TheUserOrderItemWithCreateIncorrectPaymentDetailShouldNotSubmitOrder()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user adds perchase the pencil item should update success", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user order item with create incorrect payment detail should not submit order", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -98,19 +98,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 7
  testRunner.When("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 5
+#line 8
  testRunner.And("the user add the item \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 6
+#line 9
  testRunner.And("the user go to cart for view cart with the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 7
+#line 10
  testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+#line 11
+ testRunner.And("the user chooses standard home delivery", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "First Name",
                             "Last Name",
                             "Phone",
@@ -120,45 +123,38 @@ this.ScenarioInitialize(scenarioInfo);
                             "Region",
                             "District",
                             "Sub District"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "Jane",
                             "Doe",
-                            "09-999-9999",
+                            "0999999999",
                             "Automation_test01@gmail.com",
                             "2/3 Bangkok",
                             "10520",
                             "Bangkok",
                             "Lat Krabang",
                             "Lam Pla Thio"});
-#line 8
- testRunner.And("the user Specify Delivery Information with data", ((string)(null)), table2, "And ");
-#line hidden
-#line 11
- testRunner.And("Click Tax invoice same address as the delivery", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
 #line 12
+ testRunner.And("the user Specify Delivery Information with data", ((string)(null)), table1, "And ");
+#line hidden
+#line 15
+ testRunner.And("the user selects tax invoice same address as the delivery", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
  testRunner.And("the user proceed to payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Key",
-                            "Value"});
-                table3.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Card Number",
-                            "0000 0000 0000 0000 000"});
-                table3.AddRow(new string[] {
                             "Full Name on card",
-                            "Jane Doe"});
-                table3.AddRow(new string[] {
                             "Expired date",
-                            "25/62"});
-                table3.AddRow(new string[] {
-                            "CVV/CVC",
+                            "CVV/CVC"});
+                table2.AddRow(new string[] {
+                            "0000 0000 0000 0000 000",
+                            "Jane Doe",
+                            "12/22",
                             "225"});
-#line 13
- testRunner.And("Select you payment option \"Credit Card/Debit Card\" and updated infomation", ((string)(null)), table3, "And ");
-#line hidden
-#line 19
- testRunner.And("Click \"Pay Now\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("the user selects you payment option Credit Card/Debit Card and updated infomation" +
+                        "", ((string)(null)), table2, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -171,12 +167,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                PerchasingFeature.FeatureSetup();
+                PerchasingProductFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PerchasingFeature.FeatureTearDown();
+                PerchasingProductFeature.FeatureTearDown();
             }
         }
     }

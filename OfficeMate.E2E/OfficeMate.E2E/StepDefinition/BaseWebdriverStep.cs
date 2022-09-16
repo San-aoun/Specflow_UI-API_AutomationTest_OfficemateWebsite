@@ -47,29 +47,5 @@ namespace OfficeMate.E2E.StepDefinition
         {
             ChromeDriver.ExecuteScript("location.reload();");
         }
-
-        protected void WaitUntilEmailNotFound()
-        {
-            var wait = Wait(3.0);
-            wait.Until(driver =>
-            {
-                RefreshPage();
-                WaitUntilPageLodingFinished();
-                var chrome = driver as ChromeDriver;
-                var emailNotFound = chrome.ExecuteScript("return $('#noEmails').text().trim()").ToString();
-                return emailNotFound == "No emails found.";
-            });
-        }
-
-        protected void WaiUntilEmailDeletedFinish()
-        {
-            var wait = Wait(3.0);
-            wait.Until(driver =>
-            {
-                var chrome = driver as ChromeDriver;
-                var deletedRow = int.Parse(chrome.ExecuteScript("return $('.deletedRow').length").ToString());
-                return deletedRow != 0;
-            });
-        }
     }
 }
