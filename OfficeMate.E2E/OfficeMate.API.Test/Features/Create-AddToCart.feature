@@ -1,4 +1,4 @@
-﻿Feature: Create-AddToCart
+﻿Feature: Add item to cart
 
 A short summary of the feature
 
@@ -11,7 +11,7 @@ Scenario: The users adds product on the cart and should add cart
 		| OFM5010111 | 1   | 94051473 |  
 	Then the user gets a response with code "200" message "OK"
 	And the user gets CartItemDto with following data:
-		| sku        | qty | name                                          | price  | product_Type |
+		| Sku        | Qty | Name                                          | Price  | Product_Type |
 		| OFM5010111 | 1   | Double A Copier Paper A4 80 gsm. 5 Reams/Pack | 518.69 | simple       |  
 
 
@@ -22,4 +22,4 @@ Scenario: The users adds product invalid data on the cart and should return erro
 	When the user adds the product to the cart with the details
 		| SKU        | QTY | CartId   |
 		| 0000000000 | 1   | 94051473 |  
-	Then the user gets a response with code "200" message "Requested product doesn't exist"
+	Then the user gets a response with status "error" and error message "Requested product doesn't exist"

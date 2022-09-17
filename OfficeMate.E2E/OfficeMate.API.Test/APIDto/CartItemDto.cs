@@ -2,13 +2,18 @@
 {
     public class CartItemDto
     {
-        public string SKU { get; set; }
-        public int QTY { get; set; }
+        public CartDto CartItem { get; set; }
+
+    }
+
+    public class CartDto
+    {
+        public string Sku { get; set; }
+        public int Qty { get; set; }
         public string Name { get; set; }
 
-        public int Price { get; set; }
+        public string Price { get; set; }
 
-        public string ProductType { get; set; }
-
+        public string Product_Type { get; set; }
     }
 }

@@ -80,17 +80,15 @@ namespace OfficeMate.API.Test.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
+        [Xunit.SkippableFactAttribute(DisplayName="The users adds product on the cart and should add cart")]
         [Xunit.TraitAttribute("FeatureTitle", "Create-AddToCart")]
-        [Xunit.TraitAttribute("Description", "[scenario name]")]
-        [Xunit.TraitAttribute("Category", "tag1")]
-        public void ScenarioName()
+        [Xunit.TraitAttribute("Description", "The users adds product on the cart and should add cart")]
+        public void TheUsersAddsProductOnTheCartAndShouldAddCart()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users adds product on the cart and should add cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -100,14 +98,59 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("[context]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.When("[action]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "SKU",
+                            "QTY",
+                            "CartId"});
+                table1.AddRow(new string[] {
+                            "OFM5010111",
+                            "1",
+                            "94051473"});
 #line 9
- testRunner.Then("[outcome]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the user adds the product to the cart with the details", ((string)(null)), table1, "When ");
+#line hidden
+#line 12
+ testRunner.Then("the user gets a response with code \"200\" message \"OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="The users adds product invalid data on the cart and should return error msg \"Requ" +
+            "ested product doesn\'t exist\"")]
+        [Xunit.TraitAttribute("FeatureTitle", "Create-AddToCart")]
+        [Xunit.TraitAttribute("Description", "The users adds product invalid data on the cart and should return error msg \"Requ" +
+            "ested product doesn\'t exist\"")]
+        public void TheUsersAddsProductInvalidDataOnTheCartAndShouldReturnErrorMsgRequestedProductDoesntExist()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users adds product invalid data on the cart and should return error msg \"Requ" +
+                    "ested product doesn\'t exist\"", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "SKU",
+                            "QTY",
+                            "CartId"});
+                table2.AddRow(new string[] {
+                            "0000000000",
+                            "1",
+                            "94051473"});
+#line 22
+ testRunner.When("the user adds the product to the cart with the details", ((string)(null)), table2, "When ");
+#line hidden
+#line 25
+ testRunner.Then("the user gets a response with status \"error\" and error message \"Requested product" +
+                        " doesn\'t exist\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
