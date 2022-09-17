@@ -29,9 +29,10 @@ namespace OfficeMate.API.Test.StepDefinitions.Domains
                     qty = int.Parse(table.Rows[i]["QTY"]),
                     cartId = table.Rows[i]["CartId"],
                 };
-
-                    await RequestAsync(HttpMethod.Post, APIEndPointsSettings.AddToCart,
-                JsonConvert.SerializeObject(newCartItem));
+                await RequestAsync(
+                    HttpMethod.Post, 
+                    APIEndPointsSettings.AddToCart,
+                    JsonConvert.SerializeObject(newCartItem));
             }
         }
         #endregion
@@ -61,8 +62,10 @@ namespace OfficeMate.API.Test.StepDefinitions.Domains
                 itemId = itemId,
             };
 
-            await RequestAsync(HttpMethod.Delete, APIEndPointsSettings.DeleteItem,
-        JsonConvert.SerializeObject(newCartItem));
+            await RequestAsync(
+                HttpMethod.Delete, 
+                APIEndPointsSettings.DeleteItem,
+                JsonConvert.SerializeObject(newCartItem));
         }
 
         #endregion
@@ -80,8 +83,10 @@ namespace OfficeMate.API.Test.StepDefinitions.Domains
                     cartId = cartId,
                 };
 
-                await RequestAsync(HttpMethod.Put, APIEndPointsSettings.ChangeItemQty,
-            JsonConvert.SerializeObject(newCartItem));
+                await RequestAsync(
+                    HttpMethod.Put, 
+                    APIEndPointsSettings.ChangeItemQty,
+                    JsonConvert.SerializeObject(newCartItem));
             }
 
         }
@@ -93,9 +98,20 @@ namespace OfficeMate.API.Test.StepDefinitions.Domains
         public async Task ThenTheUserGetsCartItemDtoWithFollowingData(Table table)
         {
             var responseContent = await LatestResponseMessage.Content.ReadAsStringAsync();
-            var content = JsonConvert.DeserializeObject<CartItemDto>(responseContent);
+            var content = JsonConvert.DeserializeObject<CartItemDto>(responseContent).CartItem;
+
             table.CompareToInstance(content);
         }
+
+        [Then(@"the user gets Items with following data:")]
+        public async Task ThenTheUserGetsItemsWithFollowingData(Table table)
+        {
+            var responseContent = await LatestResponseMessage.Content.ReadAsStringAsync();
+            var content = JsonConvert.DeserializeObject<TotalsDto>(responseContent).Totals.Items[0];
+
+            table.CompareToInstance(content);
+        }
+
         #endregion
 
     }

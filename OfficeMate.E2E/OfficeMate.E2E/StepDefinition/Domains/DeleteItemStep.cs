@@ -37,8 +37,5 @@ namespace OfficeMate.E2E.StepDefinition.Domains
             var results = ChromeDriver.FindElement(By.CssSelector("#cart-items > div:nth-child(2) > div")).Text;
             Assert.Equal(results, results);
         }
-
-
-
     }
 }

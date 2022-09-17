@@ -79,16 +79,16 @@ namespace OfficeMate.API.Test.Features
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "SKU",
                         "QTY",
                         "CartId"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "OFM5010111",
                         "1",
                         "94051473"});
 #line 4
- testRunner.Given("set up product to the cast", ((string)(null)), table3, "Given ");
+ testRunner.Given("set up product to the cast", ((string)(null)), table4, "Given ");
 #line hidden
         }
         
@@ -124,6 +124,21 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("the user gets a response with code \"200\" message \"OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table5.AddRow(new string[] {
+                            "Name",
+                            "Double A Copier Paper A4 80 gsm. 5 Reams/Pack"});
+                table5.AddRow(new string[] {
+                            "Base_price",
+                            "518.69"});
+                table5.AddRow(new string[] {
+                            "Tax_percent",
+                            "7"});
+#line 14
+ testRunner.And("the user gets Items with following data:", ((string)(null)), table5, "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -139,7 +154,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users deletes product invalid data on the cart and should return error msg \"e" +
                     "rror\"", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -152,10 +167,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 24
  testRunner.When("the user delete the product with item id \"0000000000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 25
  testRunner.Then("the user gets a response with code \"500\" status message is \"error\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -173,7 +188,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users updates product with non-exsit item identify should return error with m" +
                     "essage bad request", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 28
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -186,16 +201,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemId",
                             "Qty"});
-                table4.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "00000000",
                             "2"});
-#line 29
- testRunner.When("the user update product at the cart with cart identify \"94051473\"", ((string)(null)), table4, "When ");
+#line 31
+ testRunner.When("the user update product at the cart with cart identify \"94051473\"", ((string)(null)), table6, "When ");
 #line hidden
-#line 32
+#line 34
  testRunner.Then("the user gets a response with status \"error\" and error message \"We apologize for " +
                         "the inconvenience. There are not enough products in the requested quantity that " +
                         "you selected %1. Please select other similar products.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

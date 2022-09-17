@@ -1,9 +1,9 @@
-﻿Feature: Perchasing product
+﻿Feature: Purchase Product 
 
 ########################################################
 # Functional API Invalidation
 ########################################################
-Scenario: The user order item with create incorrect payment detail should not submit order
+Scenario: The user order item should be submitted.
 	When the user seraches "Plus Pen-3000 Green (04) A"
 	And the user add the item "Search Results/Plus Pen-3000 Green (04) A"
 	And the user go to cart for view cart with the item "Plus Pen-3000 Green (04) A"

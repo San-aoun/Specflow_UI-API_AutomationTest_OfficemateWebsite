@@ -11,7 +11,12 @@ Background:
 Scenario: The users gets product on the cart and should add cart
 	When the user review the totals product at the cart with cart identify "94051473"
 	Then the user gets a response with code "200" message "OK"
-
+	And the user gets Items with following data:
+		| Field       | Value                                         |
+		| Name        | Double A Copier Paper A4 80 gsm. 5 Reams/Pack |
+		| Base_price  | 518.69                                        |
+		| Tax_percent | 7                                             |
+  
 ####################################################
 # Delete - Function API Invalidation 
 ####################################################

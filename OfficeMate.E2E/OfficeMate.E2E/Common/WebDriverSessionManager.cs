@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium.Chrome;
 
-using OpenQA.Selenium.Chrome;
-
-using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
-using OfficeMate.E2E.Configuration;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace OfficeMate.E2E.Common
 {
@@ -39,14 +32,5 @@ namespace OfficeMate.E2E.Common
             }
             return _driver;
         }
-        //public ChromeDriver GoToUrl(ChromeDriver driver)
-        //{
-        //    var uri = new Uri($"{Settings.WebUrl}");
-
-        //    driver.Manage().Window.Maximize();
-        //    driver.Navigate().GoToUrl(uri);
-
-        //    Console.WriteLine("Goto uri" + uri);
-        //}
     }
 }
