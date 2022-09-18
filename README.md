@@ -4,7 +4,7 @@ We use Specflow 3+ in this project to run automated tests and Selenium.
 **Requirements**
 Please install the following:
 
-- Visual Studio 2017
+- Visual Studio 2022
 - SpecRun.SpecFlow-3.0.0+ and SpecFlow.MsTest
 - Selenium
 
