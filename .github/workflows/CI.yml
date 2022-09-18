@@ -9,7 +9,7 @@ on:
     - '**.csproj'
 
 jobs:
-  build-and-test::
+  build-and-test:
 
     runs-on: ubuntu-latest
 
