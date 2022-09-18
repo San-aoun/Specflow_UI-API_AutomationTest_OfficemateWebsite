@@ -2,15 +2,12 @@
 
 using TechTalk.SpecFlow;
 
-using Xunit;
-
 namespace OfficeMate.E2E.StepDefinition.Domains
 {
     [Binding]
     public class SearchItemStep : BaseWebdriverStep
     {
-        public SearchItemStep(FeatureContext featureContext) : base(featureContext)
-        { }
+        public SearchItemStep(FeatureContext featureContext) : base(featureContext){ }
 
         [Given(@"the user seraches ""([^""]*)""")]
         [When(@"the user seraches ""([^""]*)""")]

@@ -19,7 +19,7 @@ namespace OfficeMate.E2E.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class DeleteItemFeature : object, Xunit.IClassFixture<DeleteItemFeature.FixtureData>, System.IDisposable
+    public partial class DeleteProductFeature : object, Xunit.IClassFixture<DeleteProductFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace OfficeMate.E2E.Features
 #line 1 "DeleteItem.feature"
 #line hidden
         
-        public DeleteItemFeature(DeleteItemFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public DeleteProductFeature(DeleteProductFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace OfficeMate.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "DeleteItem", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Delete Product", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,35 +75,20 @@ namespace OfficeMate.E2E.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 3
-#line hidden
-#line 4
- testRunner.Given("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 5
- testRunner.And("the user add the item \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 6
- testRunner.And("the user go to cart for view cart with the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-        }
-        
         void System.IDisposable.Dispose()
         {
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The user delete Item on the cart should create")]
-        [Xunit.TraitAttribute("FeatureTitle", "DeleteItem")]
-        [Xunit.TraitAttribute("Description", "The user delete Item on the cart should create")]
-        public void TheUserDeleteItemOnTheCartShouldCreate()
+        [Xunit.SkippableFactAttribute(DisplayName="The user should be able to successfully delete the product from the cart.")]
+        [Xunit.TraitAttribute("FeatureTitle", "Delete Product")]
+        [Xunit.TraitAttribute("Description", "The user should be able to successfully delete the product from the cart.")]
+        public void TheUserShouldBeAbleToSuccessfullyDeleteTheProductFromTheCart_()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user delete Item on the cart should create", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user should be able to successfully delete the product from the cart.", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -113,15 +98,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 3
-this.FeatureBackground();
+#line 7
+ testRunner.Given("the user seraches \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 8
+ testRunner.And("the user add the item \"Search Results/Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
+ testRunner.And("the user go to cart for view cart with the item \"Plus Pen-3000 Green (04) A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
  testRunner.When("the user click remove the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 13
- testRunner.Then("the screen show the the message \"Your shopping cart is currently empty\\r\\nGO SHOP" +
-                        "PING\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -134,12 +121,12 @@ this.FeatureBackground();
             
             public FixtureData()
             {
-                DeleteItemFeature.FeatureSetup();
+                DeleteProductFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                DeleteItemFeature.FeatureTearDown();
+                DeleteProductFeature.FeatureTearDown();
             }
         }
     }

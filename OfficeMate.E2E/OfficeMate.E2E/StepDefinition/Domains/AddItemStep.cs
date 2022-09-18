@@ -49,6 +49,7 @@ namespace OfficeMate.E2E.StepDefinition.Domains
         [When(@"the user proceed to checkout")]
         public void WhenTheUserProceedToCheckout()
         {
+
             WaitUntilPageLodingFinished();
 
             var checkout = "btn-cartToCheckoutPage";
@@ -58,6 +59,7 @@ namespace OfficeMate.E2E.StepDefinition.Domains
         [When(@"the user chooses standard home delivery")]
         public void WhenTheUserChoosesStandardHomeDelivery()
         {
+
             WaitUntilPageLodingFinished();
             var checkout = "chk-checkout-selectShippingMethod-ofm";
             ClickElementByID(checkout);
@@ -67,6 +69,7 @@ namespace OfficeMate.E2E.StepDefinition.Domains
         [When(@"the user Specify Delivery Information with data")]
         public void WhenTheUserSpecifyDeliveryInformationWithData(Table table)
         {
+
             ChromeDriver.FindElement(By.Name("firstName")).SendKeys(table.Rows[0]["First Name"]);
             ChromeDriver.FindElement(By.Name("lastName")).SendKeys(table.Rows[0]["Last Name"]);
             ChromeDriver.FindElement(By.Name("phone")).SendKeys(table.Rows[0]["Phone"]);
@@ -119,7 +122,6 @@ namespace OfficeMate.E2E.StepDefinition.Domains
                 .Frame(ChromeDriver.FindElement(By.CssSelector("iframe#ifm-formServiceFullPayment-CreditCardFrame")));
             
             WaitUntilPageLodingFinished();
-
             ChromeDriver.FindElement(By.Id("cardNumber")).SendKeys(table.Rows[0]["Card Number"]);
             ChromeDriver.FindElement(By.Name("cardName")).SendKeys(table.Rows[0]["Full Name on card"]);
             ChromeDriver.FindElement(By.Name("cardExpiredDate")).SendKeys(table.Rows[0]["Expired date"]);
@@ -131,17 +133,17 @@ namespace OfficeMate.E2E.StepDefinition.Domains
         public void WhenTheUserClicksButtonPayNow()
         {
             ChromeDriver.ExecuteScript("document.getElementById('chk-PDPA').click()");
-
             var checkout = "btn-Submit-Order";
             ClickElementByID(checkout);
         }
 
         public void ClickElementByID(string btnId)
         {
-            Wait(1.0)
+            Wait(2.0)
             .Until(SeleniumExtras.WaitHelpers.ExpectedConditions
             .ElementIsVisible(By.Id(btnId)));
 
+            Thread.Sleep(2000);
             ChromeDriver.FindElement(By.Id(btnId)).Click();
         }
 

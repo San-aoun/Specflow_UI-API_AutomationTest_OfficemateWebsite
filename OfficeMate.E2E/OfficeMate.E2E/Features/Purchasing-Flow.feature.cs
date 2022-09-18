@@ -19,7 +19,7 @@ namespace OfficeMate.E2E.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PerchasingProductFeature : object, Xunit.IClassFixture<PerchasingProductFeature.FixtureData>, System.IDisposable
+    public partial class PurchaseProductFeature : object, Xunit.IClassFixture<PurchaseProductFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace OfficeMate.E2E.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Perchasing-Flow.feature"
+#line 1 "Purchasing-Flow.feature"
 #line hidden
         
-        public PerchasingProductFeature(PerchasingProductFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PurchaseProductFeature(PurchaseProductFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace OfficeMate.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Perchasing product", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Purchase Product", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace OfficeMate.E2E.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The user order item with create incorrect payment detail should not submit order")]
-        [Xunit.TraitAttribute("FeatureTitle", "Perchasing product")]
-        [Xunit.TraitAttribute("Description", "The user order item with create incorrect payment detail should not submit order")]
-        public void TheUserOrderItemWithCreateIncorrectPaymentDetailShouldNotSubmitOrder()
+        [Xunit.SkippableFactAttribute(DisplayName="The user order item should be submitted.")]
+        [Xunit.TraitAttribute("FeatureTitle", "Purchase Product")]
+        [Xunit.TraitAttribute("Description", "The user order item should be submitted.")]
+        public void TheUserOrderItemShouldBeSubmitted_()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user order item with create incorrect payment detail should not submit order", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user order item should be submitted.", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -167,12 +167,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                PerchasingProductFeature.FeatureSetup();
+                PurchaseProductFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PerchasingProductFeature.FeatureTearDown();
+                PurchaseProductFeature.FeatureTearDown();
             }
         }
     }

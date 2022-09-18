@@ -26,7 +26,7 @@ namespace OfficeMate.E2E.StepDefinition
 
             GotoURL(driver);
             ClearAbsScreen(driver);
-        
+
             Console.WriteLine("BeforeTestRun");
         }
 
@@ -43,7 +43,7 @@ namespace OfficeMate.E2E.StepDefinition
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(10000));
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div.sp-fancybox-wrap > iframe")));
-
+            Thread.Sleep(2000);
             driver.SwitchTo().Frame(driver.FindElement(By.CssSelector("div.sp-fancybox-wrap > iframe")));
             driver.FindElement(By.CssSelector(".fa.fa-times.element-close-button")).Click();
         }
@@ -52,37 +52,15 @@ namespace OfficeMate.E2E.StepDefinition
         public static void AfterTestRun()
         {
             var driver = _webDriverSessionMenager.GetChrome();
-
-            //driver.Close();
             driver.Quit();
         }
 
-        [BeforeFeature]
+        [BeforeFeature(Order = 0)]
         public static void BeforeFeature(FeatureContext featureContext)
         {
             featureContext.FeatureContainer.RegisterFactoryAs((objectContainer) 
                 => _webDriverSessionMenager.GetChrome());
             Console.WriteLine("BeforeFeature");
         }
-
-        //[AfterScenario]
-        //public void ScreenshotTestError()
-        //{
-        //    if (ScenarioContext.Current.TestError != null)
-        //    {
-        //        ITakesScreenshot screenshotDriver = ChromeDriver;
-        //        Screenshot screenshot = screenshotDriver.GetScreenshot();
-        //        string title = ScenarioContext.Current.ScenarioInfo.Title;
-        //        string Runname = title + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-
-        //        string folder = Directory.CreateDirectory(Environment.CurrentDirectory + @"\ScreenShot_TestError").ToString();
-        //        string path = Path.Combine(Environment.CurrentDirectory, folder, Runname + ".png");
-
-
-        //        screenshot.SaveAsFile(path, OpenQA.Selenium.ScreenshotImageFormat.Png);
-
-        //    }
-
-        //}
     }
 }

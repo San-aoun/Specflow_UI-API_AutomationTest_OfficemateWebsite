@@ -19,7 +19,7 @@ namespace OfficeMate.E2E.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SearchItemFeature : object, Xunit.IClassFixture<SearchItemFeature.FixtureData>, System.IDisposable
+    public partial class SearchProductFeature : object, Xunit.IClassFixture<SearchProductFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace OfficeMate.E2E.Features
 #line 1 "SearchItem.feature"
 #line hidden
         
-        public SearchItemFeature(SearchItemFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SearchProductFeature(SearchProductFeature.FixtureData fixtureData, OfficeMate_E2E_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace OfficeMate.E2E.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search Item", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Search Product", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace OfficeMate.E2E.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The user seraches item should get data correctly")]
-        [Xunit.TraitAttribute("FeatureTitle", "Search Item")]
-        [Xunit.TraitAttribute("Description", "The user seraches item should get data correctly")]
-        public void TheUserSerachesItemShouldGetDataCorrectly()
+        [Xunit.SkippableFactAttribute(DisplayName="The user seraches item should return accurate results.")]
+        [Xunit.TraitAttribute("FeatureTitle", "Search Product")]
+        [Xunit.TraitAttribute("Description", "The user seraches item should return accurate results.")]
+        public void TheUserSerachesItemShouldReturnAccurateResults_()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user seraches item should get data correctly", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user seraches item should return accurate results.", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -115,12 +115,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SearchItemFeature.FeatureSetup();
+                SearchProductFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SearchItemFeature.FeatureTearDown();
+                SearchProductFeature.FeatureTearDown();
             }
         }
     }

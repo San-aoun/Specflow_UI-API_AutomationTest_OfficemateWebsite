@@ -80,14 +80,14 @@ namespace OfficeMate.API.Test.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The users adds product on the cart and should add cart")]
+        [Xunit.SkippableFactAttribute(DisplayName="The users adds a product in the cart and should place a product in the cart")]
         [Xunit.TraitAttribute("FeatureTitle", "Add item to cart")]
-        [Xunit.TraitAttribute("Description", "The users adds product on the cart and should add cart")]
-        public void TheUsersAddsProductOnTheCartAndShouldAddCart()
+        [Xunit.TraitAttribute("Description", "The users adds a product in the cart and should place a product in the cart")]
+        public void TheUsersAddsAProductInTheCartAndShouldPlaceAProductInTheCart()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users adds product on the cart and should add cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users adds a product in the cart and should place a product in the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -137,17 +137,17 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="The users adds product invalid data on the cart and should return error msg \"Requ" +
-            "ested product doesn\'t exist\"")]
+        [Xunit.SkippableFactAttribute(DisplayName="The user adds invalid product data into the cart and should receive an error mess" +
+            "age \"Requested product doesn\'t exist\"")]
         [Xunit.TraitAttribute("FeatureTitle", "Add item to cart")]
-        [Xunit.TraitAttribute("Description", "The users adds product invalid data on the cart and should return error msg \"Requ" +
-            "ested product doesn\'t exist\"")]
-        public void TheUsersAddsProductInvalidDataOnTheCartAndShouldReturnErrorMsgRequestedProductDoesntExist()
+        [Xunit.TraitAttribute("Description", "The user adds invalid product data into the cart and should receive an error mess" +
+            "age \"Requested product doesn\'t exist\"")]
+        public void TheUserAddsInvalidProductDataIntoTheCartAndShouldReceiveAnErrorMessageRequestedProductDoesntExist()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The users adds product invalid data on the cart and should return error msg \"Requ" +
-                    "ested product doesn\'t exist\"", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user adds invalid product data into the cart and should receive an error mess" +
+                    "age \"Requested product doesn\'t exist\"", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
