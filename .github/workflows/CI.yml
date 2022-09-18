@@ -17,8 +17,7 @@ jobs:
     - uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '6.0.x'
-        include-prerelease: tru
+        include-prerelease: true
         
-    - run: dotnet build
-    - run: dotnet test
+    - run: dotnet build "OfficeMate.API.Test.csproj" -c Release -o /app
     
