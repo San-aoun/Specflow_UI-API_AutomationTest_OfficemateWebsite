@@ -1,25 +1,17 @@
-name: .NET
+name: build and test
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  tests:
+    name: Automation Testing
+    runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - uses: actions/checkout@v2.1.0
+      - run: dotnet test
