@@ -4,9 +4,9 @@ on:
   push:
   pull_request:
     branches: [ main ]
-    paths:
-    - '**.csproj'
-
+    paths-ignore:
+    - 'README.md'
+    
 jobs:
   build:
 
