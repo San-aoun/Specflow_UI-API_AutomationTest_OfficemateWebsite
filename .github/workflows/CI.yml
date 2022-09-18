@@ -9,9 +9,22 @@ on:
     - '**.csproj'
 
 jobs:
-  tests:
-    name: Automation Testing
-    runs-on: windows-latest
+  build-and-test::
+
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2.1.0
-      - run: dotnet test
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.400
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: Automate Test
+      run: dotnet test --no-build --verbosity normal
