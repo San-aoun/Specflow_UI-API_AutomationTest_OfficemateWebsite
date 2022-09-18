@@ -2,9 +2,11 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
+    paths:
+    - '**.Test.cs'
+    - '**.Test.csproj'
 
 jobs:
   build:
@@ -16,26 +18,11 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 6.0
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-      # upload report as build artifact
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2
-      if: ${{always()}}
-      with:
-        name: 'Test Run'
-        path: ${{github.workspace}}/${{env.file_name}}
-      
-      # add report as PR comment (if PR)
-    - name: comment PR
-      uses: machine-learning-apps/pr-comment@master
-      if: ${{ github.event_name == 'pull_request' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        path: ${{env.file_name}}
+    
