@@ -18,6 +18,5 @@ jobs:
       with:
         dotnet-version: '6.0.x'
         include-prerelease: true
-    - run: dotnet build "OfficeMate.E2E/OfficeMate.API.Test.csproj" --configuration Release
     - run: dotnet test "OfficeMate.E2E/OfficeMate.API.Test.csproj"
     
