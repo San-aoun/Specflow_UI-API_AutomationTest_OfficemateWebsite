@@ -17,6 +17,11 @@ jobs:
     - uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '6.0.x'
-        include-prerelease: true
-    - run: dotnet test
+        include-prerelease: tru
+    
+    - name: Automate API test
+      run: dotnet test **\*OfficeMate.API.Test.dll
+      
+    - name: Automate UI test
+      run: dotnet test **\*OfficeMate.E2E.dll
     
