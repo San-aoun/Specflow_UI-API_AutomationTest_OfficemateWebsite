@@ -56,6 +56,12 @@ namespace OfficeMate.API.Test.StepDefinitions
 
             table.CompareToInstance(content);
         }
+
+        public async Task<T> DeserializeResponse<T>()
+        {
+            var responseContent = await LatestResponseMessage.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(responseContent);
+        }
         #endregion
 
     }

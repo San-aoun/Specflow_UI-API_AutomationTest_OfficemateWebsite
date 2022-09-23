@@ -46,10 +46,6 @@ namespace OfficeMate.API.Test.StepDefinitions.Validation
             Assert.Equal(message, exceptionMessage);
         }
         
-        private async Task<T> DeserializeResponse<T>()
-        {
-            var responseContent = await LatestResponseMessage.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(responseContent);
-        }
+
     }
 }
