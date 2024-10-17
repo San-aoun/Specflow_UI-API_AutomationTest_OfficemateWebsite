@@ -17,3 +17,8 @@ Note that we use MsTest because xUnit not allow to add attachment in test output
 
 **Example the List out the test cases from excel document** 
 https://docs.google.com/spreadsheets/d/1FcT8zE5QdTH_d5GnnLQa1vbR_3sRNeIMFCtm3KCfYrc/edit?usp=sharing
+
+** Infomation **
+website link : https://www.ofm.co.th/
+![image](https://github.com/user-attachments/assets/0e8e06bf-3521-4b94-b750-48afac982f1e)
+
